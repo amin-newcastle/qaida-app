@@ -12,4 +12,10 @@ export class ArabicAlphabetComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  playAudio(audioPath: string) {
+    const audio = new Audio(audioPath);
+    audio.load()
+    audio.play();
+  }
+
 }
