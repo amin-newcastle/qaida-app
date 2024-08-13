@@ -8,9 +8,8 @@ describe('ArabicAlphabetComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ArabicAlphabetComponent ]
-    })
-    .compileComponents();
+      declarations: [ArabicAlphabetComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

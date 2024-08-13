@@ -1,0 +1,1 @@
+[[ -z "$SKIPGITCZ" ]] && exec < /dev/tty && npx cz --hook -s || true

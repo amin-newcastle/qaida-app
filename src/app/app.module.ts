@@ -7,16 +7,9 @@ import { MainComponent } from './main/main.component';
 import { ArabicAlphabetComponent } from './arabic-alphabet/arabic-alphabet.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MainComponent,
-    ArabicAlphabetComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, MainComponent, ArabicAlphabetComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
