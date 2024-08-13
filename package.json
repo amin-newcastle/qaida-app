@@ -1,6 +1,6 @@
 {
   "name": "qawaid-frontend",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +10,8 @@
     "lint": "npx eslint",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "release": "standard-version"
   },
   "private": true,
   "dependencies": {
@@ -44,6 +45,7 @@
     "jest": "^29.7.0",
     "lint-staged": "^15.2.9",
     "prettier": "^3.3.3",
+    "standard-version": "^9.5.0",
     "typescript-eslint": "^8.1.0"
   },
   "lint-staged": {
