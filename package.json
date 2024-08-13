@@ -5,9 +5,12 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "prettier:check": "npx prettier --check .",
+    "prettier:fix": "npx prettier --write .",
+    "lint": "npx eslint",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "release": "release-it"
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -19,54 +22,41 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
-    "@commitlint/cli": "^18.4.4",
-    "@commitlint/config-conventional": "^18.4.4",
-    "@release-it/conventional-changelog": "^8.0.1",
-    "husky": "^8.0.3",
-    "release-it": "^17.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "typescript": "4.4.3",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.3.1",
     "@angular/cli": "~13.3.1",
     "@angular/compiler-cli": "~13.3.0",
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@eslint/js": "^9.9.0",
     "@types/node": "^12.11.1",
-    "typescript": "~4.6.2"
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.9.0",
+    "husky": "^8.0.0",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.9",
+    "prettier": "^3.3.3",
+    "typescript-eslint": "^8.1.0"
   },
-  "release-it": {
-    "git": {
-      "commitMessage": "chore: release v${version}",
-      "push": false
-    },
-    "github": {
-      "release": true
-    },
-    "hooks": {
-      "after:git:release": "git push origin HEAD"
-    },
-    "npm": {
-      "publish": false
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "infile": "CHANGELOG.md",
-        "preset": {
-          "name": "conventionalcommits",
-          "types": [
-            {
-              "type": "feat",
-              "section": "Features"
-            },
-            {
-              "type": "fix",
-              "section": "Bug Fixes"
-            },
-            {}
-          ]
-        }
-      }
+  "lint-staged": {
+    "*.{css,less,scss,html,json,jsx,js,ts}": [
+      "prettier --write ."
+    ],
+    "*.js, *.ts": "eslint --fix"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog",
+      "maxHeaderWidth": 100,
+      "maxLineWidth": 100
     }
   }
 }
